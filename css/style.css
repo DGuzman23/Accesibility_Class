@@ -1,0 +1,157 @@
+:root {
+  /* Colores basados fielmente en el diagrama semántico original */
+  --header-bg: #e0f2fe;
+  --nav-bg: #fee2e2;
+  --section-bg: #ecfccb;
+  --aside-bg: #fef3c7;
+  --article-bg: #ede9fe;
+  --footer-bg: #c7fdd8;
+  --accent: #2563eb;
+  --focus-ring: #f59e0b;
+  --ribbon-bg: #1e293b;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #1a202c;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  line-height: 1.6;
+}
+
+/* WCAG: Enlace de salto para navegación por teclado */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--accent);
+  color: white;
+  padding: 12px;
+  z-index: 1000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 0 0 8px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--focus-ring);
+}
+
+.main-container {
+  max-width: 1140px;
+  margin: 2rem auto;
+  border: 2px solid #334155;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos Semánticos por Etiqueta */
+header {
+  background-color: var(--header-bg);
+  border-bottom: 1px solid #cbd5e1;
+}
+
+nav {
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid #cbd5e1;
+}
+
+section {
+  background-color: var(--section-bg);
+  border: 1px solid #d9f99d;
+  transition: background-color 0.3s;
+}
+
+article {
+  background-color: var(--article-bg);
+  border: 1px solid #ddd6fe;
+  transition: background-color 0.3s;
+}
+
+aside {
+  background-color: var(--aside-bg);
+  border: 1px solid #fef08a;
+  height: 100%;
+}
+
+footer {
+  background-color: var(--footer-bg);
+  border-top: 1px solid #cbd5e1;
+}
+
+/* Foco visible para accesibilidad */
+a:focus,
+button:focus {
+  outline: 4px solid var(--focus-ring) !important;
+  outline-offset: 2px;
+}
+
+.tag-label {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* Cinta de Conclusiones */
+.conclusion-ribbon {
+  background-color: var(--ribbon-bg);
+  color: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+  text-align: center;
+  border-left: 8px solid #f59e0b;
+}
+
+/* Animación de revelado */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.7s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.aside-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+code {
+  color: #be185d;
+  font-weight: 600;
+}
+
+/* Estilo para los enlaces del NAV */
+nav a {
+  transition: all 0.3s ease;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  color: #1e293b !important;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background-color: white;
+  color: var(--accent) !important;
+  transform: translateY(-2px);
+}
+
+/* Soporte para el foco programático sin borde feo */
+[tabindex="-1"]:focus {
+  outline: none;
+}
